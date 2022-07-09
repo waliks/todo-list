@@ -2,32 +2,56 @@
 
 O Todo-list foi um projeto escolhido pela comunidade para iniciar os estudos com typeScript e revisar conceitos de react.
 
-### Como iniciar o projeto.
+## Setup inicial
 
-- forque o projeto.
-- instale as dependências com pacote yarn [Doc](https://chore-update--yarnpkg.netlify.app/pt-BR/docs/cli/install)
+Primeiramente, faça um `fork` do projeto para sua conta pessoal no github. Na página do github clique em `Fork` :
 
-### Tasks
+![Criar um fork](./docs/images/fork-example.png)
 
-- Crie um readme para o seu projeto.
-- Publique o projeto no git hub pages. [Doc](https://github.com/gitname/react-gh-pages)
-- Implemente a funcionalidade criar task.
-- Implemente a funcionalidade editar task.
-- Implemente a funcionalidade deletar task.
-- Implemente o filtro de tarefas completas.
-- Implemente o filtro de tarefas pendentes.
+Você será redirecionado para a página de novo `Fork`, selecione seu usuário como owner e clique em
+`Create Fork`:
 
-#### Extra
+![Setup fork](./docs/images/fork-setup-example.png)
 
-Refatore e implemente Context na aplicação.
+Com o `fork` pronto, clone o repositório para sua máquina. Acesse a pasta clonada via terminal e instale as dependências utilizando o `yarn` [Doc](https://chore-update--yarnpkg.netlify.app/pt-BR/docs/cli/install)
 
-### Fluxo de desenvolvimento
+```sh
+# Acessar a pasta clonada
+cd /path-to-repository
+
+# Instala as dependências do projeto
+yarn
+
+# Iniciar o projeto
+yarn dev
+```
+
+Ao iniciar o projeto com o comando `yarn dev` você pode acessar sua aplicação no browser no endereço
+`http://localhost:3000`.
+
+## Tasks
+
+Para finalizar este projeto, você deve completar as seguintes tasks:
+
+- [ ] Crie um readme para o seu projeto.
+- [ ] Publique o projeto no git hub pages. [Doc](https://github.com/gitname/react-gh-pages)
+- [ ] Implemente a funcionalidade criar task.
+- [ ] Implemente a funcionalidade editar task.
+- [ ] Implemente a funcionalidade deletar task.
+- [ ] Implemente o filtro de tarefas completas.
+- [ ] Implemente o filtro de tarefas pendentes.
+
+### Task Extra
+
+- [ ] Refatore e implemente Context na aplicação.
+
+## Fluxo de desenvolvimento
 
 - Um dos objetivos deste projeto e trabalharmos o mais próximo possível do fluxo de trabalho real. Com isso é muito importante que cada tarefa seja desenvolvida em uma branch, e so depois de aprovada no codeReview seja mergeada na main. [Doc](https://www.notion.so/Git-Guidelines-1281dded381c40e082b79d3d28c2cc8a)
 
 - Cada pull request deve limitar-se ao escopo de uma tarefa específica.
 
-### Padrões de commit e base de código.
+### Padrões de commit e base de código
 
 Neste projeto estamos utilizando algumas ferramentas que nos ajudam a manter padrões de commit e código. Para os commits utilizamos o husky que valida o nome de commit, para os padrões configurados no projeto todo commit tem que ter algum dos seguintes prefixos;
 
@@ -39,4 +63,4 @@ Já para manter os padrões de código temos o eslint configurado, que irá gara
 
 [Documentação de apoio](https://www.notion.so/podcodar/React-3f5f9a2cc3aa48dd94fd6f2bb41b8100)
 
-**Forque o projeto e bora Codar !**
+**:rocket: Faça seu Fork e bora Codar! :rocket:**
