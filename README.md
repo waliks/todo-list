@@ -1,39 +1,13 @@
-# Seja bem vindo ao Todo-list
+# Todo-list - Podcodar
 
-O Todo-list foi um projeto escolhido pela comunidade para iniciar os estudos com typeScript e revisar conceitos de react.
+O presente projeto é desenvolvido junto à comunidade Podcodar, tendo como objetivo a iniciação nos estudos com typeScript e revisar conceitos de react.
 
-## Setup inicial
-
-Primeiramente, faça um `fork` do projeto para sua conta pessoal no github. Na página do github clique em `Fork` :
-
-![Criar um fork](./docs/images/fork-example.png)
-
-Você será redirecionado para a página de novo `Fork`, selecione seu usuário como owner e clique em
-`Create Fork`:
-
-![Setup fork](./docs/images/fork-setup-example.png)
-
-Com o `fork` pronto, clone o repositório para sua máquina. Acesse a pasta clonada via terminal e instale as dependências utilizando o `yarn` [Doc](https://chore-update--yarnpkg.netlify.app/pt-BR/docs/cli/install)
-
-```sh
-# Acessar a pasta clonada
-cd /path-to-repository
-
-# Instala as dependências do projeto
-yarn
-
-# Iniciar o projeto
-yarn dev
-```
-
-Ao iniciar o projeto com o comando `yarn dev` você pode acessar sua aplicação no browser no endereço
-`http://localhost:3000`.
 
 ## Tasks
 
-Para finalizar este projeto, você deve completar as seguintes tasks:
+Para finalizar este projeto, deve-se completar as seguintes tasks:
 
-- [ ] Crie um readme para o seu projeto.
+- [x] Crie um readme para o seu projeto.
 - [ ] Publique o projeto no git hub pages. [Doc](https://github.com/gitname/react-gh-pages)
 - [ ] Implemente a funcionalidade criar task.
 - [ ] Implemente a funcionalidade editar task.
