@@ -3,6 +3,38 @@
 O presente projeto é desenvolvido junto à comunidade Podcodar, tendo como objetivo a iniciação nos estudos com typeScript e revisar conceitos de react.
 
 
+## Setup inicial
+
+Primeiramente, faça um `fork` do projeto para sua conta pessoal no github. Na página do github clique em `Fork` :
+
+![Criar um fork](./docs/images/fork-example.png)
+
+Você será redirecionado para a página de novo `Fork`, selecione seu usuário como owner e clique em
+`Create Fork`:
+
+![Setup fork](./docs/images/fork-setup-example.png)
+
+Com o `fork` pronto, clone o repositório para sua máquina. Acesse a pasta clonada via terminal e instale as dependências utilizando o `yarn` [Doc](https://chore-update--yarnpkg.netlify.app/pt-BR/docs/cli/install)
+
+```sh
+# Acessar a pasta clonada
+cd /path-to-repository
+# Instala as dependências do projeto
+yarn
+# Iniciar o projeto
+yarn dev
+```
+
+Ao iniciar o projeto com o comando `yarn dev` você pode acessar sua aplicação no browser no endereço
+`http://localhost:3000`.
+
+## Tecnologias Utilizadas
+
+- ``HTML``
+- ``CSS``
+- ``Typescript``
+- ``React``
+
 ## Tasks
 
 Para finalizar este projeto, deve-se completar as seguintes tasks:
