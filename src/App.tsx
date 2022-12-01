@@ -10,13 +10,14 @@ function App() {
   const [list, setList] = useState<TaskItemType[]>([]);
 
   const handleAddTask = (taskTitle: string) => {
-    const newList = [...list];
-    newList.push({
-      id: list.length ? list[list.length - 1].id + 1 : 0,
-      title: taskTitle,
-      done: false,
-    });
-    setList(newList);
+    setList([
+      ...list,
+      {
+        id: list.length ? list[list.length - 1].id + 1 : 0,
+        title: taskTitle,
+        done: false,
+      },
+    ]);
   };
 
   return (
