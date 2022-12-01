@@ -5,16 +5,11 @@ type Props = {
 };
 
 function AddItemForm({ onAddTask }: Props) {
-  const domInputId = 'new-todo-input';
-
   const [inputText, setInputText] = useState('');
 
   const handleAdd = () => {
-    const getValue: any = document.getElementById(domInputId);
-
     if (inputText.trim() !== '') {
       onAddTask(inputText.trim());
-      getValue.value = '';
       setInputText('');
     }
   };
@@ -22,17 +17,14 @@ function AddItemForm({ onAddTask }: Props) {
   return (
     <form>
       <h2 className="label-wrapper">
-        <label htmlFor={domInputId} className="label__lg">
-          Lista de tarefas PodCodar
-        </label>
+        <label className="label__lg">Lista de tarefas PodCodar</label>
       </h2>
       <input
         type="text"
-        id={domInputId}
         className="input input__lg"
-        name={domInputId}
         autoComplete="off"
         onChange={(e) => setInputText(e.target.value)}
+        value={inputText}
       />
       <button
         type="button"
