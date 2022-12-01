@@ -7,7 +7,7 @@ import TaskItem from './components/TaskItem';
 import { TaskItemType } from './types/TaskItemType';
 
 function App() {
-  const [list, setList] = useState<TaskItemType[]>([]);
+  const [taskList, setTaskList] = useState<TaskItemType[]>([]);
 
   const handleAddTask = (taskTitle: string) => {
     setList([
