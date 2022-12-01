@@ -10,10 +10,10 @@ function App() {
   const [taskList, setTaskList] = useState<TaskItemType[]>([]);
 
   const handleAddTask = (taskTitle: string) => {
-    setList([
-      ...list,
+    setTaskList([
+      ...taskList,
       {
-        id: list.length ? list[list.length - 1].id + 1 : 0,
+        id: taskList.length ? taskList[taskList.length - 1].id + 1 : 0,
         title: taskTitle,
         done: false,
       },
@@ -25,7 +25,7 @@ function App() {
       <Title />
       <AddItemForm onAddTask={handleAddTask} />
       <TaskDashboard />
-      {list.map((item) => (
+      {taskList.map((item) => (
         <TaskItem taskData={item} />
       ))}
     </div>
