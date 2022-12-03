@@ -1,22 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-function AddItemForm() {
-  const domInputId = 'new-todo-input';
+type Props = {
+  onAddTask: (taskTitle: string) => void;
+};
+
+function AddItemForm({ onAddTask }: Props) {
+  const [inputText, setInputText] = useState('');
+
+  const handleAdd = () => {
+    if (inputText.trim() !== '') {
+      onAddTask(inputText.trim());
+      setInputText('');
+    }
+  };
+
   return (
     <form>
       <h2 className="label-wrapper">
-        <label htmlFor={domInputId} className="label__lg">
-          Lista de tarefas PodCodar
-        </label>
+        <label className="label__lg">Lista de tarefas PodCodar</label>
       </h2>
       <input
         type="text"
-        id={domInputId}
         className="input input__lg"
-        name={domInputId}
         autoComplete="off"
+        onChange={(e) => setInputText(e.target.value)}
+        value={inputText}
       />
-      <button type="button" className="btn btn__primary btn__lg">
+      <button
+        type="button"
+        className="btn btn__primary btn__lg"
+        onClick={handleAdd}
+      >
         Add Task
       </button>
     </form>
