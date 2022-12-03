@@ -16,21 +16,24 @@ function App() {
 
   const [taskId, setTaskId] = useState<number>(0);
 
-  const handleAddTask = (taskTitle: string) => {
+  const handleAddTask = (inputText: string) => {
     setTaskList([
       ...taskList,
       {
         id: taskList.length ? taskList[taskList.length - 1].id + 1 : 0,
-        title: taskTitle,
+        title: inputText,
         done: false,
       },
     ]);
   };
 
-  const handleEditTask = (taskTitle: string, taskId: number) => {
+  const handleEditTask = (
+    selectedTaskTitle: string,
+    selectedTaskId: number,
+  ) => {
     setIsEditModalOpen(true);
-    setTaskTitle(taskTitle);
-    setTaskId(taskId);
+    setTaskTitle(selectedTaskTitle);
+    setTaskId(selectedTaskId);
   };
 
   const handleCloseModal = () => {
