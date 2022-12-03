@@ -14,7 +14,7 @@ function App() {
 
   const [taskTitle, setTaskTitle] = useState<string>('');
 
-  const [taskId, setTaskId] = useState<number>(0)
+  const [taskId, setTaskId] = useState<number>(0);
 
   const handleAddTask = (taskTitle: string) => {
     setTaskList([
@@ -39,7 +39,7 @@ function App() {
 
   const handleSaveTask = (editedTaskTitle: string) => {
     taskList[taskId].title = editedTaskTitle;
-  }
+  };
 
   return (
     <div className="todoapp stack-large">
@@ -48,11 +48,14 @@ function App() {
       <TaskDashboard />
 
       {taskList.map((item) => (
-        <TaskItem taskData={item} onEditTask={handleEditTask}/>
-
+        <TaskItem taskData={item} onEditTask={handleEditTask} />
       ))}
       {isEditModalOpen && (
-        <EditTaskModal taskTitle={taskTitle} onClose={handleCloseModal} onSave={handleSaveTask}/>
+        <EditTaskModal
+          taskTitle={taskTitle}
+          onClose={handleCloseModal}
+          onSave={handleSaveTask}
+        />
       )}
     </div>
   );
