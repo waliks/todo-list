@@ -51,7 +51,7 @@ function App() {
       <TaskDashboard />
 
       {taskList.map((item) => (
-        <TaskItem taskData={item} onEdit={handleEditTask} />
+        <TaskItem taskData={item} onEditTask={handleEditTask} />
       ))}
       {isEditModalOpen && (
         <EditTaskModal
