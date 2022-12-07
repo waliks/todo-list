@@ -3,14 +3,14 @@ import { TaskItemType } from '../types/TaskItemType';
 
 interface TaskItemProps {
   taskData: TaskItemType;
-  onEditTask: (taskTitle: string, taskId: number) => void;
+  onEdit: (taskTitle: string, taskId: number) => void;
 }
 
-function TaskItem({ taskData, onEditTask }: TaskItemProps) {
+function TaskItem({ taskData, onEdit }: TaskItemProps) {
   const [isChecked, setIsChecked] = useState<boolean>(taskData.done);
 
   const handleEdit = () => {
-    onEditTask(taskData.title, taskData.id);
+    onEdit(taskData.title, taskData.id);
   };
 
   return (
