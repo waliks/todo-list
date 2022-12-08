@@ -10,7 +10,7 @@ import EditTaskModal from './components/EditTaskModal';
 function App() {
   const [taskList, setTaskList] = useState<TaskItemType[]>([]);
 
-  const [isEditModalOpen, setIsEditModalOpen] = useState<boolean>(false);
+  const [showEditModal, setShowEditModal] = useState<boolean>(false);
 
   const [taskTitle, setTaskTitle] = useState<string>('');
 
@@ -31,13 +31,13 @@ function App() {
     selectedTaskTitle: string,
     selectedTaskId: number,
   ) => {
-    setIsEditModalOpen(true);
+    setShowEditModal(true);
     setTaskTitle(selectedTaskTitle);
     setTaskId(selectedTaskId);
   };
 
   const handleCloseModal = () => {
-    setIsEditModalOpen(false);
+    setShowEditModal(false);
   };
 
   const handleSaveTask = (editedTaskTitle: string) => {
@@ -53,7 +53,7 @@ function App() {
       {taskList.map((item) => (
         <TaskItem taskData={item} onEdit={handleEditTask} />
       ))}
-      {isEditModalOpen && (
+      {showEditModal && (
         <EditTaskModal
           taskTitle={taskTitle}
           onClose={handleCloseModal}
