@@ -5,19 +5,43 @@ import AddItemForm from './components/AddItemForm';
 import TaskDashboard from './components/TaskDashboard';
 import TaskItem from './components/TaskItem';
 import { TaskItemType } from './types/TaskItemType';
+import EditTaskModal from './components/EditTaskModal';
 
 function App() {
   const [taskList, setTaskList] = useState<TaskItemType[]>([]);
 
-  const handleAddTask = (taskTitle: string) => {
+  const [showEditModal, setShowEditModal] = useState<boolean>(false);
+
+  const [taskTitle, setTaskTitle] = useState<string>('');
+
+  const [taskId, setTaskId] = useState<number>(0);
+
+  const handleAddTask = (inputText: string) => {
     setTaskList([
       ...taskList,
       {
         id: taskList.length ? taskList[taskList.length - 1].id + 1 : 0,
-        title: taskTitle,
+        title: inputText,
         done: false,
       },
     ]);
+  };
+
+  const handleEditTask = (
+    selectedTaskTitle: string,
+    selectedTaskId: number,
+  ) => {
+    setShowEditModal(true);
+    setTaskTitle(selectedTaskTitle);
+    setTaskId(selectedTaskId);
+  };
+
+  const handleCloseModal = () => {
+    setShowEditModal(false);
+  };
+
+  const handleSaveTask = (editedTaskTitle: string) => {
+    taskList.filter((item) => item.id === taskId)[0].title = editedTaskTitle;
   };
 
   return (
@@ -25,9 +49,17 @@ function App() {
       <Title />
       <AddItemForm onAddTask={handleAddTask} />
       <TaskDashboard />
+
       {taskList.map((item) => (
-        <TaskItem taskData={item} />
+        <TaskItem taskData={item} onEdit={handleEditTask} />
       ))}
+      {showEditModal && (
+        <EditTaskModal
+          taskTitle={taskTitle}
+          onClose={handleCloseModal}
+          onSave={handleSaveTask}
+        />
+      )}
     </div>
   );
 }

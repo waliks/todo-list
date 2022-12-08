@@ -3,10 +3,15 @@ import { TaskItemType } from '../types/TaskItemType';
 
 interface TaskItemProps {
   taskData: TaskItemType;
+  onEdit: (taskTitle: string, taskId: number) => void;
 }
 
-function TaskItem({ taskData }: TaskItemProps) {
-  const [isChecked, setIsChecked] = useState(taskData.done);
+function TaskItem({ taskData, onEdit }: TaskItemProps) {
+  const [isChecked, setIsChecked] = useState<boolean>(taskData.done);
+
+  const handleEdit = () => {
+    onEdit(taskData.title, taskData.id);
+  };
 
   return (
     <li className="todo stack-small">
@@ -22,8 +27,8 @@ function TaskItem({ taskData }: TaskItemProps) {
         </label>
       </div>
       <div className="btn-group">
-        <button type="button" className="btn">
-          save
+        <button type="button" className="btn" onClick={handleEdit}>
+          Edit
           <span className="visually-hidden" />
         </button>
         <button type="button" className="btn btn__danger">
