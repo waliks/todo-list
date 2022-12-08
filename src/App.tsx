@@ -41,7 +41,7 @@ function App() {
   };
 
   const handleSaveTask = (editedTaskTitle: string) => {
-    taskList[taskId].title = editedTaskTitle;
+    taskList.filter((item) => item.id === taskId)[0].title = editedTaskTitle;
   };
 
   return (
